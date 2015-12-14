@@ -1,0 +1,9 @@
+{
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.common.bat.battery"
+			}
+		]
+	}
+}
