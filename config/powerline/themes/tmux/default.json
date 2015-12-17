@@ -13,7 +13,16 @@
 				"priority": 50
 			},
 			{
-				"function": "powerline.segments.common.wthr.weather"
+				"function": "powerline.segments.common.wthr.weather",
+				"args": {
+					"location_query": "Berlin,Germany"
+				}
+			},
+			{
+				"function": "powerline.segments.common.wthr.weather",
+				"args": {
+					"location_query": "Milan,Italy"
+				}
 			},
 			{
 				"function": "powerline.segments.common.time.date"

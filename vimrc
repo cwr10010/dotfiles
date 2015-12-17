@@ -35,6 +35,12 @@ Bundle 'w0ng/vim-hybrid'
 
 " OrgMode
 Plugin 'jceb/vim-orgmode'
+Plugin 'vimoutliner'
+Plugin 'vimwiki'
+
+" Gist-Vim
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 call vundle#end()
 filetype plugin indent on
