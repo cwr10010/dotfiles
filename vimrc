@@ -98,12 +98,13 @@ syntax on
 set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-set background=dark
+set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h12
 colorscheme solarized
-let g:solarized_termcolors=256
-"colorscheme molokai
-"let g:molokai_original = 1
-"highlight ColorColumn ctermbg=235 guibg=#2c2d27
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 let &colorcolumn="80,".join(range(120,999),",")
 set number
 
