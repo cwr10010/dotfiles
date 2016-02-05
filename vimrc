@@ -35,6 +35,9 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'w0ng/vim-hybrid'
+Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-pyunit'
+
 
 " OrgMode
 Plugin 'jceb/vim-orgmode'
@@ -201,6 +204,10 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" vim-flake8
+let g:flake8_show_in_gutter=1  " show
+au BufRead,BufWritePost *.py call Flake8()
 
 " add powerline support
 python from powerline.vim import setup as powerline_setup
