@@ -24,6 +24,7 @@ Plugin 'tmux-plugins/vim-tmux'
 " colorschemes
 Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 
 " JavaScript plugins
 Plugin 'pangloss/vim-javascript'
@@ -97,10 +98,12 @@ syntax on
 set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-"set background=dark
-colorscheme molokai
-let g:molokai_original = 1
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+"colorscheme molokai
+"let g:molokai_original = 1
+"highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
 set number
 
