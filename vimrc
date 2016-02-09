@@ -33,7 +33,9 @@ Plugin 'jelera/vim-javascript-syntax'
 " Python plugins
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
+if has('python')
+	Bundle 'Valloric/YouCompleteMe'
+endif
 Bundle 'w0ng/vim-hybrid'
 Plugin 'nvie/vim-flake8'
 "Plugin 'nvie/vim-pyunit'
@@ -201,17 +203,18 @@ au BufNewFile,BufRead *.js, *.html, *.css
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " vim-flake8
 let g:flake8_show_in_gutter=1  " show
 au BufRead,BufWritePost *.py call Flake8()
 
-" add powerline support
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+if has('python')
+	" YouCompleteMe
+	let g:ycm_autoclose_preview_window_after_completion=1
+	map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+	" add powerline support
+	python from powerline.vim import setup as powerline_setup
+	python powerline_setup()
+	python del powerline_setup
+	set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+endif
