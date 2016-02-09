@@ -213,8 +213,14 @@ if has('python')
 	map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 	" add powerline support
-	python from powerline.vim import setup as powerline_setup
-	python powerline_setup()
-	python del powerline_setup
-	set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+	python << EOF
+try:
+    import vim
+    from os.path import dirname
+    from powerline import vim as powerline_vim
+    powerline_vim.setup()
+    vim.command(r"set rtp+=%s/bindings/vim" % dirname(powerline_vim.__file__))
+except Exception:
+    pass
+EOF
 endif
