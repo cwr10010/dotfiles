@@ -9,8 +9,8 @@ plugins=(common-aliases git battery brew colorize common-aliases git-extras gnu-
 #start tmux (if not running) when firing up a shell
 ZSH_TMUX_AUTOSTART=true
 
-if [[ -a ~/.zshrc.local ]]; then
-	source ~/.zshrc.local
+if [[ -a ~`id -u -nr`/.zshrc.local ]]; then
+	source ~`id -u -nr`/.zshrc.local
 fi
 
 source $ZSH/oh-my-zsh.sh
