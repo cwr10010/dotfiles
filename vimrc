@@ -40,6 +40,8 @@ Bundle 'w0ng/vim-hybrid'
 Plugin 'nvie/vim-flake8'
 "Plugin 'nvie/vim-pyunit'
 
+" LaTeX plugins
+Plugin 'vim-latex/vim-latex'
 
 " OrgMode
 Plugin 'jceb/vim-orgmode'
@@ -199,6 +201,17 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+au BufNewFile,Bufread *.tex set spell
+au BufNewFile,Bufread *.tex set spelllang=de
+filetype plugin on
+filetype indent on
+au BufEnter *.tex set autowrite
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
+let g:Tex_GotoError = 0
 
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
