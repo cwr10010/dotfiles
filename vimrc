@@ -22,8 +22,6 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tmux-plugins/vim-tmux'
 
 " colorschemes
-Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 
 " JavaScript plugins
@@ -42,16 +40,6 @@ Plugin 'nvie/vim-flake8'
 
 " LaTeX plugins
 Plugin 'vim-latex/vim-latex'
-
-" OrgMode
-Plugin 'jceb/vim-orgmode'
-Plugin 'vimoutliner'
-Plugin 'vimwiki'
-
-" Gist-Vim
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-
 call vundle#end()
 filetype plugin indent on
 
