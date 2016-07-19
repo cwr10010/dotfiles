@@ -25,7 +25,7 @@ All steps are based on (mac)OS (X) with [iTerm2](https://www.iterm2.com), [Oh-My
 
 ### Applications and fonts
 * Import settings from ~/.dotfiles/iterm2/Solarized Dark.itermcolors into iTerm2
-* Install fonts in ~/.dotfiles/fonts
+* Install fonts from ~/.dotfiles/fonts
 * Setup iTerm2 to use Powerline-Font (Currently *12 pt Meslo LG S Regular for Powerline*)
 
 ### Additional setup
