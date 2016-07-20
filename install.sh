@@ -50,7 +50,7 @@ fi
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
 pip install --upgrade --user git+git://github.com/powerline/powerline
 
-if [ -e `which zsh` ] && [ -d ~/.oh-my-zsh ]
+if [[ -e `which zsh` ] && [ -d ~/.oh-my-zsh ]]
 then
     if [ ! -d ~/.oh-my-zsh/custom/ ]
     then
