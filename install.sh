@@ -18,7 +18,7 @@ case "$SYSTEM" in
                 ;;
 
 esac
-DATE=`date +"%s"
+DATE=`date +"%s"`
 
 create_symlink() {
     mv $1 $1.$DATE
