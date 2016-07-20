@@ -47,7 +47,7 @@ function backup_if_exists() {
 }
 
 function create_symlink() {
-	backup_if_exists $2
+    backup_if_exists $2
     echo "Creating symlink for $1 to $2"
     ln -s $1 $2
 }
