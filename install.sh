@@ -5,30 +5,31 @@ SYSTEM=`uname -s`
 case "$SYSTEM" in
 
     Darwin) echo "Found Darwin environment"
-            if [ ! -e `which brew` ]
-                then
-                        echo "Brew not found"
-                        exit -1
-                fi
-                brew install macvim --with-override-system-vim --with-lua --with-luajit --with-luajit --with-cscope
-                brew install python libevent tmux git reattach-to-user-namespace maven \
-                   tree grep ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
-                ;;
+        if [ ! -e `which brew` ]
+            then
+            echo "Brew not found"
+            exit -1
+        fi
+        brew install macvim --with-override-system-vim --with-lua --with-luajit --with-luajit --with-cscope
+        brew install python libevent tmux git reattach-to-user-namespace maven \
+        tree grep ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
+        ;;
     *) echo "Unknown System"
-                ;;
+        ;;
 
 esac
+
 DATE=`date +"%s"`
 
-create_symlink() {
+function create_symlink() {
     echo "symlinking $1 to $2"
     mv $1 $1.$DATE
     ln -s $2 $1
 }
 
 if [ ! -d ~/.dotfiles ]
-then
-  git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
+    then
+    git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
 else
   git pull ~/.dotfiles
 fi
@@ -43,17 +44,17 @@ rm -rf ~/.tmux/plugins/*
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 if [ ! -d ~/.config ]
-then
-  mkdir ~/.config
+    then
+    mkdir ~/.config
 fi
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
 pip install --upgrade --user git+git://github.com/powerline/powerline
 
 if [ -e `which zsh`] && [ -d ~/.oh-my-zsh ]
-then
-  if [ ! -d ~/.oh-my-zsh/custom/ ]
-  then
-        mkdir ~/.oh-my-zsh/custom/
+    then
+    if [ ! -d ~/.oh-my-zsh/custom/ ]
+      then
+      mkdir ~/.oh-my-zsh/custom/
   fi
   create_symlink ~/.dotfiles/zshrc ~/.zshrc
   create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
