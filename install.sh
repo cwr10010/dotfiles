@@ -18,31 +18,46 @@ case "$SYSTEM" in
                 ;;
 
 esac
+DATE=`date +"%s"
 
-git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
+create_symlink() {
+    mv $1 $1.$DATE
+    ln -s $2 $1
+}
 
-ln -s ~/.dotfiles/vimrc ~/.vimrc
+if [ ! -d ~/.dotfiles ]
+then
+  git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
+else
+  git pull ~/.dotfiles
+fi
+
+create_symlink ~/.dotfiles/vimrc ~/.vimrc
+rm -rf ~/.vim/bundle/*
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+create_symlink ~/.dotfiles/tmux.conf ~/.tmux.conf
+rm -rf ~/.tmux/plugins/*
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 if [ ! -d ~/.config ]
 then
   mkdir ~/.config
 fi
-ln -s ~/.dotfiles/config/powerline ~/.config/powerline
-pip install --user git+git://github.com/powerline/powerline
+create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
+pip install --upgrade --user git+git://github.com/powerline/powerline
 
-if [ -e `which zsh` ]
+if [ -e `which zsh` && -d ~/.oh-my-zsh ]
 then
   if [ ! -d ~/.oh-my-zsh/custom/ ]
   then
         mkdir ~/.oh-my-zsh/custom/
   fi
-  ln -s ~/.dotfiles/zshrc ~/.zshrc
-  ln -s ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
+  create_symlink ~/.dotfiles/zshrc ~/.zshrc
+  create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
+else
+  echo "Oh-my-zsh not found, skip setup"
 fi
 
 exit 0
