@@ -94,7 +94,7 @@ set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h12
-colorscheme solarized
+silent! colorscheme solarized
 if has('gui_running')
     set background=light
 else
