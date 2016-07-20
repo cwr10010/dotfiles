@@ -6,7 +6,7 @@ based on parts of [https://github.com/nicknisi/dotfiles]
 All steps are based on (mac)OS (X) with [iTerm2](https://www.iterm2.com), [Oh-My-Zsh](http://ohmyz.sh) and [Homebrew](http://brew.sh) installed
 
 ### Short way, if /bin/sh does link to bash:
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/cwr10010/dotfiles/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/cwr10010/dotfiles/master/install.sh)"
 
 ### Long way
 
