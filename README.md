@@ -3,15 +3,17 @@
 based on parts of [https://github.com/nicknisi/dotfiles]
 
 ## Setup
-
 All steps are based on (mac)OS (X) with [iTerm2](https://www.iterm2.com), [Oh-My-Zsh](http://ohmyz.sh) and [Homebrew](http://brew.sh) installed
 
-### Shell environment
+### Short way, if /bin/sh does link to bash:
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/cwr10010/dotfiles/master/install.sh)"
 
-    $> git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
+### Long way
+
     $> brew install macvim --with-override-system-vim --with-lua --with-luajit --with-luajit --with-cscope
     $> brew install python libevent tmux git reattach-to-user-namespace maven \
        tree grep ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
+    $> git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
     $> ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
     $> ln -s ~/.dotfiles/vimrc ~/.vimrc
     $> ln -s ~/.dotfiles/zshrc ~/.zshrc
@@ -21,7 +23,7 @@ All steps are based on (mac)OS (X) with [iTerm2](https://www.iterm2.com), [Oh-My
     $> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     $> vim +PluginInstall +qall
     $> git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    $> ~/.tmux/plugins/tpm/bin/install_plugins
+    $> ~/.tmux/plugins/tpm/bin/install_plugins # may fail if sh does not link to bash
 
 ### Applications and fonts
 * Import settings from ~/.dotfiles/iterm2/Solarized Dark.itermcolors into iTerm2
