@@ -50,14 +50,14 @@ fi
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
 pip install --upgrade --user git+git://github.com/powerline/powerline
 
-if [ -e `which zsh`] && [ -d ~/.oh-my-zsh ]
-    then
+if [ -e `which zsh` ] && [ -d ~/.oh-my-zsh ]
+then
     if [ ! -d ~/.oh-my-zsh/custom/ ]
-      then
+    then
       mkdir ~/.oh-my-zsh/custom/
-  fi
-  create_symlink ~/.dotfiles/zshrc ~/.zshrc
-  create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
+    fi
+    create_symlink ~/.dotfiles/zshrc ~/.zshrc
+    create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
 else
   echo "Oh-my-zsh not found, skip setup"
 fi
