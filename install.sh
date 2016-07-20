@@ -22,9 +22,12 @@ esac
 DATE=`date +"%s"`
 
 function create_symlink() {
+    if [ -e $2 ]
+    then
+      mv $2 $2.$DATE
+    fi
     echo "symlinking $1 to $2"
-    mv $1 $1.$DATE
-    ln -s $2 $1
+    ln -s $1 $2
 }
 
 if [ ! -d ~/.dotfiles ]
@@ -50,7 +53,7 @@ fi
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
 pip install --upgrade --user git+git://github.com/powerline/powerline
 
-if [[ -e `which zsh` ] && [ -d ~/.oh-my-zsh ]]
+if [ -d ~/.oh-my-zsh ]
 then
     if [ ! -d ~/.oh-my-zsh/custom/ ]
     then
