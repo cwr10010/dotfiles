@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$BASH" != "/bin/sh" ]
+if [[ "$BASH" != "/bin/sh" ]]
 then
 	echo "BASH is not the default Burnshell, exit"
 	exit 1
