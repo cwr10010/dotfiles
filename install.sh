@@ -14,6 +14,9 @@ case "$SYSTEM" in
         brew install python libevent tmux git reattach-to-user-namespace maven \
         tree grep ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
         ;;
+    Linux) echo "Found Linux environment"
+        # think about checking if tmux, vim and stuff are installed
+        ;;
     *) echo "Unknown System"
         ;;
 
@@ -26,7 +29,7 @@ function create_symlink() {
     then
       mv $2 $2.$DATE
     fi
-    echo "symlinking $1 to $2"
+    echo "Creating symlink for $1 to $2"
     ln -s $1 $2
 }
 
@@ -42,7 +45,7 @@ rm -rf ~/.tmux/plugins/*
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 if [ ! -d ~/.config ]
-    then
+then
     mkdir ~/.config
 fi
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
