@@ -30,12 +30,7 @@ function create_symlink() {
     ln -s $1 $2
 }
 
-if [ ! -d ~/.dotfiles ]
-    then
-    git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
-else
-  git pull ~/.dotfiles
-fi
+git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
 
 create_symlink ~/.dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim/bundle/*
