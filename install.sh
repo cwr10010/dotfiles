@@ -2,8 +2,8 @@
 
 if [ "$BASH" != "/bin/sh" ]
 then
-	echo "BASH is not the default Burnshell, exit"
-	exit 1
+    echo "BASH is not the default Burnshell, exit"
+    exit 1
 fi
 
 SYSTEM=`uname -s`
@@ -14,7 +14,7 @@ case "$SYSTEM" in
 
     Darwin) echo "Found Darwin environment"
         if [ ! -e `which brew` ]
-            then
+        then
             echo "Brew not found"
             exit 2
         fi
@@ -31,16 +31,16 @@ case "$SYSTEM" in
 esac
 
 function create_if_not_exists() {
-	if [ ! -d $1 ]
-	then
-	    mkdir $1
-	fi
+    if [ ! -d $1 ]
+    then
+        mkdir $1
+    fi
 }
 
 function backup_if_exists() {
     if [ -e $1 ]
     then
-      mv $1 $1.$DATE
+        mv $1 $1.$DATE
     fi
 }
 
@@ -72,7 +72,7 @@ then
     create_symlink ~/.dotfiles/zshrc ~/.zshrc
     create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
 else
-  echo "Oh-my-zsh not found, skip setup"
+    echo "Oh-my-zsh not found, skip setup"
 fi
 
 exit 0
