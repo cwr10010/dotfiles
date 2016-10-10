@@ -20,7 +20,7 @@ case "$SYSTEM" in
         fi
         brew install macvim --with-override-system-vim --with-lua --with-luajit --with-luajit --with-cscope
         brew install python libevent tmux git reattach-to-user-namespace maven \
-			tree grep ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
+			tree ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
         ;;
     Linux) echo "Found Linux environment"
         # think about checking if tmux, vim and stuff are installed
@@ -54,7 +54,7 @@ git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
 
 create_if_not_exists ~/.config
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
-pip install --upgrade --user git+git://github.com/powerline/powerline
+pip install --upgrade --user https://github.com/powerline/powerline.git
 
 create_symlink ~/.dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim/bundle/*
