@@ -1,0 +1,67 @@
+\ProvidesFile{MyLetter.lco}[2017/ß2/25 lco (Carsten Rose)]
+\KOMAoptions{
+    fontsize=11pt,%%          Font size
+%---------------------------------------------------------------------------
+% Type area
+   paper=a4,%%               Sheet size
+   enlargefirstpage=on,%%    Enlarge the first page
+   pagenumber=headright,%%   Page number on the top right of the header
+%---------------------------------------------------------------------------
+% Layout
+   headsepline=on,%%         Line below the page number
+   parskip=half,%%           Space between paragraphs
+%---------------------------------------------------------------------------
+% Letterhead and address
+   fromalign=right,%%        Positioning of the letterhead
+   fromphone=on,%%           Phone number in the sender's area
+   fromrule=off,%%           Line below the sender's area (aftername, afteraddress)
+   fromfax=off,%%            Fax number
+   fromemail=on,%%           Mail address
+   fromurl=off,%%            Homepage
+   fromlogo=off,%%           Company logo
+   addrfield=on,%%           Adress field for window envelopes
+   backaddress=on,%%         ... with sender address
+   subject=beforeopening,%%  Positioning of the subject
+   locfield=narrow,%%        Additional field for the sender
+   foldmarks=off,%%           Folding mark
+   numericaldate=off,%%      Numerical date
+   refline=narrow,%%         Spread of the reference line in the type area
+%---------------------------------------------------------------------------
+% Formatting
+   draft=on%%                Draft mode
+}
+%---------------------------------------------------------------------------
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+% \usepackage{url}
+%---------------------------------------------------------------------------
+% Aus der moderncvstylecasual.sty:
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{marvosym} % symbols for footer
+\usepackage{ifthen}
+
+% \definecolor{blau}{rgb}{0.20,0.40,0.65} %blau
+% \definecolor{gruen}{rgb}{0.30,0.65,0.15} %gruen
+% \definecolor{rot}{rgb}{0.95,0.20,0.20} %rot
+% \definecolor{orange}{rgb}{0.95,0.55,0.15} %rot
+\definecolor{firstnamecolor}{rgb}{0.65,0.65,0.65}
+\definecolor{familynamecolor}{rgb}{0.45,0.45,0.45}
+\definecolor{footersymbolcolor}{rgb}{0.20,0.40,0.65}
+\definecolor{addresscolor}{rgb}{0.35,0.35,0.35} %grau
+
+\newcommand*{\addressfont}{\small\sffamily\mdseries\slshape}
+\newcommand{\footersymbol}{~~\color{footersymbolcolor}\normalfont\textbullet\color{addresscolor}\addressfont~~~}
+%---------------------------------------------------------------------------
+% Fonts
+\setkomafont{fromname}{\sffamily \LARGE}
+\setkomafont{fromaddress}{\sffamily}%%    Instead of \small
+\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\mdseries}
+\setkomafont{backaddress}{\mdseries}
+\usepackage{mathptmx}%%                   Font Times
+% \usepackage{mathpazo}%%                  Font Palatino
+% \setkomafont{fromname}{\LARGE}
+

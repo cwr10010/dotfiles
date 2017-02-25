@@ -128,11 +128,6 @@ nmap \s :set ts=4 sts=4 sw=4 et<cr>
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <C-h> :call WinMove('h')<cr>
-map <C-j> :call WinMove('j')<cr>
-map <C-k> :call WinMove('k')<cr>
-map <C-l> :call WinMove('l')<cr>
-
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
 function! WinMove(key)
@@ -147,6 +142,11 @@ function! WinMove(key)
         exec "wincmd ".a:key
     endif
 endfunction
+
+map <C-h> :call WinMove('h')<cr>
+map <C-j> :call WinMove('j')<cr>
+map <C-k> :call WinMove('k')<cr>
+map <C-l> :call WinMove('l')<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin settings

@@ -1,0 +1,46 @@
+\ProvidesFile{LetterEnclosure.lco}[2017/ß2/25 lco (Carsten Rose)]
+\LoadLetterOption{LetterStyle}
+\newcommand{\myName}{\myFirstname\ \myFamilyname}
+\newcommand{\myAddress}{\myStreet\ \myZipcode\ \myTown}
+% insert information into koma
+\setkomavar{fromname}{\myFirstname\ \myFamilyname}
+\setkomavar{fromaddress}{\myAddress}
+\setkomavar{fromphone}{\myCell}
+\renewcommand{\phonename}{Phone}
+\setkomavar{fromemail}{\myMail}
+\setkomavar{backaddressseparator}{. }
+\setkomavar{signature}{ (\myFirstname\ \myFamilyname)}
+% \setkomavar{frombank}{}
+% \setkomavar{location}{\\[8ex]\raggedleft{\footnotesize{\usekomavar{fromaddress}\\Mobil: \usekomavar{fromphone}}}}%% Beside the address field
+%---------------------------------------------------------------------------
+\firsthead{
+  \begin{flushright}
+    \renewcommand{\baselinestretch}{0.8}
+    \LARGE \color{firstnamecolor}\myFirstname\ \color{familynamecolor}\myFamilyname\\
+    \parbox{\textwidth}{\color{footersymbolcolor}\rule{\textwidth}{1pt}}
+    \small\color{black}\myStreet\\\myZipcode\ \myTown
+  \end{flushright}
+}
+%---------------------------------------------------------------------------
+\firstfoot{
+  \centering
+  \parbox{0.8\textwidth}{
+    \centering
+    \addressfont\color{addresscolor}
+    \myStreet\ --\ \myZipcode\ \myTown\\
+    \ifthenelse{\isundefined{\myCell}}{}{\Mobilefone~\myCell}
+    \ifthenelse{\isundefined{\myPhone}}{}{\footersymbol\Telefon~\myPhone}
+    \ifthenelse{\isundefined{\myFax}}{}{\footersymbol\FAX~\myFax}
+    \ifthenelse{\isundefined{\myMail}}{}{\footersymbol\Letter~\myMail}
+    \ifthenelse{\isundefined{\myExtrainfo}}{}{\\\myExtrainfo}
+  }
+}
+\setkomavar{place}{\myTown}
+\setkomavar{date}{\today}
+
+\setkomavar{enclseparator}{: }
+%---------------------------------------------------------------------------
+% Page style
+\pagestyle{plain}%% No header
+%---------------------------------------------------------------------------
+

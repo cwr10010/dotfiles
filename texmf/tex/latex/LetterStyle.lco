@@ -1,0 +1,13 @@
+\ProvidesFile{LetterStyle.lco}[2017/ß2/25 lco (Carsten Rose)]
+\makeatletter
+\@setplength{sigbeforevskip}{50pt} % space before signature, in case you write bigger than 12pt :-]
+\@setplength{firstfootvpos}{266mm} % vertical footer position from top of page
+\@setplength{firstheadvpos}{20mm}
+\@setplength{firstheadwidth}{\paperwidth}
+\ifdim \useplength{toaddrhpos}>\z@
+  \@addtoplength[-2]{firstheadwidth}{\useplength{toaddrhpos}}
+\else
+  \@addtoplength[2]{firstheadwidth}{\useplength{toaddrhpos}}
+\fi
+\@setplength{foldmarkhpos}{6.5mm}
+\makeatother
