@@ -21,6 +21,8 @@ case "$SYSTEM" in
         brew install macvim --with-override-system-vim --with-lua --with-luajit --with-luajit --with-cscope
         brew install python libevent tmux git reattach-to-user-namespace maven \
 			tree ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
+
+		export TEXMF_LOCATION=Library/
         ;;
     Linux) echo "Found Linux environment"
         # think about checking if tmux, vim and stuff are installed
@@ -65,6 +67,8 @@ create_symlink ~/.dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.tmux/plugins/*
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh ~/.tmux/plugins/tpm/bin/install_plugins
+
+create_symlink ~/dotfiles/texmf ~/$(TEXMF_LOCATION)texmf
 
 if [ -d ~/.oh-my-zsh ]
 then

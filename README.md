@@ -37,6 +37,60 @@ Some local setup can be stored in zshrc.local, like:
     export HOMEBREW_GITHUB_API_TOKEN=<API-TOKEN>
     BULLETTRAIN_CONTEXT_DEFAULT_USER=<ssh default user>
 
+### LaTeX Letter Template
+You can create a Scrlttr2 Letter with ease and a nice layout. These dotfiles provide Scrlttr2 .lco for that. Simply create a me.lco with your address data in the directory your .tex file of the letter will be, with the following content
+
+    \newcommand{\myFirstname}{FIRSTNAME}
+    \newcommand{\myFamilyname}{FAMILYNAME}
+    \newcommand{\myStreet}{STREET AND NUMBER}
+	\newcommand{\myTown}{TOWN}
+    \newcommand{\myZipcode}{ZIPCODE}
+    \newcommand{\myCell}{CELLPHONENUMBER}
+    \newcommand{\myPhone}{PHONENUMBER}
+    % \newcommand{\myFax}{}
+    \newcommand{\myMail}{me@mail.com}
+    % \newcommand{\myExtrainfo}{foobar}
+    
+    \LoadLetterOption{LetterEnclosure}
+
+And then you can use that simply by creating your TeX file
+
+    \documentclass[MyLetter]{scrlttr2}
+    %---------------------------------------------------------------------------
+    \begin{document}
+    %---------------------------------------------------------------------------
+    \LoadLetterOptions{KOMAold,me} % replace me with the name of your lco file
+    %---------------------------------------------------------------------------
+    \begin{letter}{Vorname Nachname\\
+        Beispielstr. 1\\
+	    12345 Berlin\\
+	    Deutschland}
+	%---------------------------------------------------------------------------
+	% Further options
+	\KOMAoptions{%%
+	}
+	%---------------------------------------------------------------------------
+	\setkomavar{subject}{MEIN BETREFF}
+	%---------------------------------------------------------------------------
+	\opening{Sehr geehrte Damen und Herren,}
+    
+	TEXT5
+    
+	\closing{Mit freundlichen Grüßen}
+    
+	%---------------------------------------------------------------------------
+	% \ps{PS:}
+
+	%\encl{Lebenslauf\\Zeugnisse}
+	% \cc{}
+	%---------------------------------------------------------------------------
+	\end{letter}
+	%---------------------------------------------------------------------------
+	\end{document}
+	%---------------------------------------------------------------------------
+
+and replace 'me' with the name of your .lco file (without the extention)
+
 ## TODO / Bugs
 * [FIXME] Tmux config seems to hide <prefix>+j for going buffer down in VIM
 * Wrap setup into one single shell-script
