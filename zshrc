@@ -12,5 +12,6 @@ ZSH_TMUX_AUTOSTART=true
 if [[ -a ~`id -u -nr`/.zshrc.local ]]; then
 	source ~`id -u -nr`/.zshrc.local
 fi
+export EDITOR=vim
 
 source $ZSH/oh-my-zsh.sh
