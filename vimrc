@@ -40,6 +40,9 @@ Plugin 'nvie/vim-flake8'
 
 " LaTeX plugins
 Plugin 'vim-latex/vim-latex'
+
+Bundle 'elentok/plaintasks.vim'
+
 call vundle#end()
 filetype plugin indent on
 
