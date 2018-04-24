@@ -2,27 +2,48 @@
 	"segments": {
 		"right": [
 			{
-				"function": "powerline.segments.common.sys.uptime",
-				"args": {
-					"seconds_format": ""
-				},
-				"priority": 50
-			},
-			{
 				"function": "powerline.segments.common.sys.system_load",
 				"priority": 50
 			},
 			{
 				"function": "powerline.segments.common.wthr.weather",
 				"args": {
-					"location_query": "Berlin,Germany"
+					"location_query": "Berlin,Germany",
+                    "icons": {
+                        "day":           "〇",
+                        "blustery":      "⚑",
+                        "rainy":         "☔",
+                        "cloudy":        "☁",
+                        "snowy":         "❅",
+                        "stormy":        "☈",
+                        "foggy":         "≡",
+                        "sunny":         "☼",
+                        "night":         "☾",
+                        "windy":         "☴",
+                        "not_available": "�",
+                        "unknown":       "⚠"
+					}
 				}
 			},
 			{
 				"function": "powerline.segments.common.wthr.weather",
 				"args": {
-					"location_query": "Milan,Italy"
-				}
+					"location_query": "Milan,Italy",
+	                "icons": {
+                        "day":           "〇",
+                        "blustery":      "⚑",
+                        "rainy":         "☔",
+                        "cloudy":        "☁",
+                        "snowy":         "❅",
+                        "stormy":        "☈",
+                        "foggy":         "≡",
+                        "sunny":         "☼",
+                        "night":         "☾",
+                        "windy":         "☴",
+                        "not_available": "�",
+                        "unknown":       "⚠"
+					}
+	    		}
 			},
 			{
 				"function": "powerline.segments.common.time.date"
