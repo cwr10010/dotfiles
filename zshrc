@@ -8,6 +8,7 @@ BULLETTRAIN_IS_SSH_CLIENT=$SSH_CLIENT
 plugins=(common-aliases git battery brew colorize common-aliases git-extras gnu-utils history mvn node npm osx tmux spring ssh-agent sudo terminalapp urltools xcode zsh-navigation-tools python pip pep8 jsontools)
 #start tmux (if not running) when firing up a shell
 ZSH_TMUX_AUTOSTART=true
+PATH=$PATH:~/Library/Python/3.7/bin
 
 if [[ -a ~`id -u -nr`/.zshrc.local ]]; then
 	source ~`id -u -nr`/.zshrc.local

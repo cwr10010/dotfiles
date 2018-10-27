@@ -6,43 +6,15 @@
 				"priority": 50
 			},
 			{
-				"function": "powerline.segments.common.wthr.weather",
+                "function": "powerline.segments.common.wthr.weather",
 				"args": {
-					"location_query": "Berlin,Germany",
-                    "icons": {
-                        "day":           "〇",
-                        "blustery":      "⚑",
-                        "rainy":         "☔",
-                        "cloudy":        "☁",
-                        "snowy":         "❅",
-                        "stormy":        "☈",
-                        "foggy":         "≡",
-                        "sunny":         "☼",
-                        "night":         "☾",
-                        "windy":         "☴",
-                        "not_available": "�",
-                        "unknown":       "⚠"
-					}
+                    "location_query": "Berlin,Germany"
 				}
 			},
 			{
 				"function": "powerline.segments.common.wthr.weather",
 				"args": {
-					"location_query": "Milan,Italy",
-	                "icons": {
-                        "day":           "〇",
-                        "blustery":      "⚑",
-                        "rainy":         "☔",
-                        "cloudy":        "☁",
-                        "snowy":         "❅",
-                        "stormy":        "☈",
-                        "foggy":         "≡",
-                        "sunny":         "☼",
-                        "night":         "☾",
-                        "windy":         "☴",
-                        "not_available": "�",
-                        "unknown":       "⚠"
-					}
+					"location_query": "Milan,Italy"
 	    		}
 			},
 			{

@@ -31,7 +31,7 @@ Plugin 'jelera/vim-javascript-syntax'
 " Python plugins
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-if has('python')
+if has('python3')
 	Bundle 'Valloric/YouCompleteMe'
 endif
 Bundle 'w0ng/vim-hybrid'
@@ -216,13 +216,13 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let g:flake8_show_in_gutter=1  " show
 au BufRead,BufWritePost *.py call Flake8()
 
-if has('python')
+if has('python3')
 	" YouCompleteMe
 	let g:ycm_autoclose_preview_window_after_completion=1
 	map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 	" add powerline support
-	python << EOF
+	python3 << EOF
 try:
     import vim
     from os.path import dirname
