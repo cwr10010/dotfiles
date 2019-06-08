@@ -41,6 +41,9 @@ Plugin 'nvie/vim-flake8'
 " LaTeX plugins
 Plugin 'vim-latex/vim-latex'
 
+" Go plugins
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 Bundle 'elentok/plaintasks.vim'
 
 call vundle#end()
