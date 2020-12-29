@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
-if [ "$BASH" != "/bin/sh" ]
+echo "This requires Xcode Commandline Tools to be installed"
+echo -n "(y/n) "
+read xctinstalled
+
+if [ "$xctinstalled" != "y" ]
+then
+	echo "exiting..."
+	exit 1
+fi
+
+if [ "$BASH" != "/bin/bash" ]
 then
     echo "BASH is not the default Burnshell, exit"
     exit 1
@@ -18,16 +28,16 @@ case "$SYSTEM" in
             echo "Brew not found"
             exit 2
         fi
-        brew install macvim --with-override-system-vim --with-lua --with-luajit --with-luajit --with-cscope
-        brew install python libevent tmux git reattach-to-user-namespace maven \
-			tree ssh-copy-id wakeonlan wget xz sqlite urlview uptime psutils cmake
+        brew install python3 ruby graphviz harfbuzz coreutils libevent tmux \
+			git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
+			wget xz sqlite urlview uptime psutils alacritty
 
 		export TEXMF_LOCATION=Library/
         ;;
     Linux) echo "Found Linux environment"
         # think about checking if tmux, vim and stuff are installed
         ;;
-    *) echo "Unknown System"
+    *) echo "Unknown System! Bailing out..."; exit 1
         ;;
 
 esac
@@ -56,7 +66,8 @@ git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
 
 create_if_not_exists ~/.config
 create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
-pip install --upgrade --user https://github.com/powerline/powerline.git
+create_symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
+pip3 install --user git+git://github.com/powerline/powerline
 
 create_symlink ~/.dotfiles/vimrc ~/.vimrc
 rm -rf ~/.vim/bundle/*
