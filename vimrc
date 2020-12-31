@@ -20,6 +20,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'junegunn/goyo.vim'
+Plugin 'vifm/vifm.vim'
+Plugin 'junegunn/limelight.vim'
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -47,10 +50,12 @@ Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Bundle 'elentok/plaintasks.vim'
 
 call vundle#end()
+
+set encoding=UTF-8
 filetype plugin indent on
 
 set nocompatible " not compatible with vi
-set autoread " detect when a file is changed
+set autoread wildmode=longest,list,full " detect when a file is changed
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -159,6 +164,10 @@ map <C-j> :call WinMove('j')<cr>
 map <C-k> :call WinMove('k')<cr>
 map <C-l> :call WinMove('l')<cr>
 
+" Wildmenu / wildmode
+set wildmenu
+set wildmode=longest:full,full
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,6 +226,32 @@ let g:Tex_GotoError = 0
 
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Goyo / Limelight settings
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+"Goyo settings
+function! s:goyo_enter()
+    set noshowmode
+    set noshowcmd
+    set nocursorline
+    "CocDisable
+    Limelight
+endfunction
+
+function! s:goyo_leave()
+    set showmode
+    set showcmd
+    set cursorline
+    "CocEnable
+    Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave() 
 
 " vim-flake8
 let g:flake8_show_in_gutter=1  " show

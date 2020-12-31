@@ -30,7 +30,7 @@ case "$SYSTEM" in
         fi
         brew install python3 ruby graphviz harfbuzz coreutils libevent tmux \
 			git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
-			wget xz sqlite urlview uptime psutils alacritty vim
+			wget xz sqlite urlview uptime psutils alacritty nvim
 
 		export TEXMF_LOCATION=Library/
         ;;
@@ -65,14 +65,21 @@ function create_symlink() {
 git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
 
 create_if_not_exists ~/.config
-create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
+#create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
 create_symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
-pip3 install --user git+git://github.com/powerline/powerline
+create_symlink ~/.dotfiles/config/nvim ~/.config/nvim
+create_symlink ~/.dotfiles/config/tmux ~/.config/tmux
+
+#pip3 install --user git+git://github.com/powerline/powerline
 
 create_symlink ~/.dotfiles/vimrc ~/.vimrc
-rm -rf ~/.vim/bundle/*
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+#rm -rf ~/.vim/bundle/*
+#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+nvim +PlugInstall! +qall!
 
 create_symlink ~/.dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.tmux/plugins/*
