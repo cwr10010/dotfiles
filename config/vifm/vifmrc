@@ -1,5 +1,5 @@
 " vim: filetype=vifm :
-set vicmd=vim
+set vicmd=nvim
 set syscalls
 set trash
 set history=100
@@ -26,7 +26,7 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark b ~/bin/
+mark b ~/.local/bin/
 mark h ~/
 
 " ------------------------------------------------------------------------------

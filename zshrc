@@ -5,8 +5,11 @@ PATH="$PATH:~/Library/Python/3.8/bin"
 
 alias ls='ls --color=auto'
 alias dircolors='gdircolors'
+TERM=screen-256color
 
-export EDITOR=vim
+export EDITOR=nvim
+export LESSEDIT="$EDITOR ?lm+%lm. %f"
+
 alias vim=nvim
 alias vi=vim
 alias v=vim

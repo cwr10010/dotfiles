@@ -52,9 +52,7 @@ set shiftwidth=2 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 
 " set cliboard for dealing with systems
-if $TMUX == ''
-	set clipboard=unnamedplus
-endif
+set clipboard=unnamed
 
 " all folding
 set foldmethod=indent "fold by indentation
@@ -167,6 +165,7 @@ nmap ga <Plug>(EasyAlign)
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Python coding
 """""""""""""""""""""""""""""""""""""""""""""""""
+let g:python3_host_prog = $HOME."/.pyenv/versions/nvim_env/bin/python"
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
