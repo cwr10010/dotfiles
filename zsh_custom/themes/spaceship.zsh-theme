@@ -1,1 +1,1 @@
-/Users/crose/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
+spaceship-prompt/spaceship.zsh-theme
