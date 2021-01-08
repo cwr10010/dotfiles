@@ -1,5 +1,3 @@
-# where is oh_my_zsh is installed
-
 PATH="$PATH:/usr/local/bin"
 PATH="$PATH:~/Library/Python/3.8/bin"
 
@@ -36,3 +34,4 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+

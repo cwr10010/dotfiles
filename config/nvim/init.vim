@@ -1,42 +1,41 @@
 call plug#begin('~/.vim/plugged')
-  Plug 'kien/ctrlp.vim'
-"  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-  Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
-  
-	Plug 'tmux-plugins/vim-tmux'
-  Plug 'benmills/vimux'
-  Plug 'junegunn/vim-easy-align'
-  
-	Plug 'junegunn/goyo.vim'
-  Plug 'junegunn/limelight.vim'
+Plug 'kien/ctrlp.vim'
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vifm/vifm.vim'
 
-  Plug 'vifm/vifm.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-	Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-	Plug 'NLKNguyen/papercolor-theme'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'benmills/vimux'
+Plug 'junegunn/vim-easy-align'
 
-	Plug 'vim-latex/vim-latex'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
-	" Python plugins
-  Plug 'tmhedberg/SimpylFold'
-  Plug 'vim-scripts/indentpython.vim'
-  "if has('python3')
-  "        Bundle 'Valloric/YouCompleteMe'
-  "endif
-  Plug 'w0ng/vim-hybrid'
-  Plug 'nvie/vim-flake8'
-  "Plug 'nvie/vim-pyunit'
-	
-	Plug 'rodjek/vim-puppet'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
+
+Plug 'vim-latex/vim-latex'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Python plugins
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+"if has('python3')
+"        Bundle 'Valloric/YouCompleteMe'
+"endif
+Plug 'w0ng/vim-hybrid'
+Plug 'nvie/vim-flake8'
+"Plug 'nvie/vim-pyunit'
+
+Plug 'rodjek/vim-puppet'
 
 call plug#end()
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 let mapleader = ','
 
@@ -116,12 +115,12 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tmuxline#enabled = 0
 
 " Nerdtree
-let g:NERDTreeQuitOnOpen=0 " close NERDTree after a file is opened
-let NERDTreeShowHidden=1 " show hidden files in NERDTree
-let NERDTreeIgnore = ['\.pyc$'] " ignore certain files
+"let g:NERDTreeQuitOnOpen=0 " close NERDTree after a file is opened
+"let NERDTreeShowHidden=1 " show hidden files in NERDTree
+"let NERDTreeIgnore = ['\.pyc$'] " ignore certain files
 
-nmap <silent> <leader>k :NERDTreeToggle<cr>
-nmap <silent> <leader>y :NERDTreeFind<cr>
+"nmap <silent> <leader>k :NERDTreeToggle<cr>
+"nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
