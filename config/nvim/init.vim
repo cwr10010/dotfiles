@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
   Plug 'kien/ctrlp.vim'
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
@@ -30,6 +30,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'w0ng/vim-hybrid'
   Plug 'nvie/vim-flake8'
   "Plug 'nvie/vim-pyunit'
+	
+	Plug 'rodjek/vim-puppet'
 
 call plug#end()
 
@@ -99,6 +101,13 @@ hi! SignColumn guibg=NONE ctermbg=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vifm
+map <leader>vf :Vifm<CR>
+map <leader>vs :VsplitVifm<CR>
+map <leader>sp :SplitVifm<CR>
+map <leader>dv :DiffVifm<CR>
+map <leader>tv :TabVifm<CR>
 
 " Airline
 let g:airline_theme='papercolor'

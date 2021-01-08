@@ -3,7 +3,7 @@
 PATH="$PATH:/usr/local/bin"
 PATH="$PATH:~/Library/Python/3.8/bin"
 
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias dircolors='gdircolors'
 TERM=screen-256color
 
