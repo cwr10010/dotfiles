@@ -30,7 +30,7 @@ case "$SYSTEM" in
         fi
         brew install python3 ruby graphviz harfbuzz coreutils libevent tmux \
 			git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
-			wget xz sqlite urlview uptime psutils alacritty nvim
+			wget xz sqlite urlview uptime psutils alacritty nvim fish peco
 
 		export TEXMF_LOCATION=Library/
         ;;
@@ -69,6 +69,8 @@ create_if_not_exists ~/.config
 create_symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
 create_symlink ~/.dotfiles/config/nvim ~/.config/nvim
 create_symlink ~/.dotfiles/config/tmux ~/.config/tmux
+create_symlink ~/.dotfiles/config/fish ~/.config/fish
+create_symlink ~/.dotfiles/config/peco ~/.config/peco
 
 #pip3 install --user git+git://github.com/powerline/powerline
 
@@ -95,6 +97,12 @@ then
     create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
 else
     echo "Oh-my-zsh not found, skip setup"
+fi
+
+if [ -d ~/.config/omf ]
+then
+	  omf install spacefish
+		omf install peco
 fi
 
 exit 0

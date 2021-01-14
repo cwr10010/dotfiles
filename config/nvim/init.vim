@@ -1,5 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'justinmk/vim-sneak'
+Plug 'romainl/vim-cool'
+Plug 'Stautob/vim-fish'
+
 Plug 'kien/ctrlp.vim'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vifm/vifm.vim'
@@ -100,6 +104,8 @@ hi! SignColumn guibg=NONE ctermbg=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-sneak
+let g:sneak#label = 1
 
 " vifm
 map <leader>vf :Vifm<CR>
@@ -209,3 +215,6 @@ let g:Tex_GotoError = 0
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+if &shell =~# 'fish$'
+    set shell=sh
+endif
