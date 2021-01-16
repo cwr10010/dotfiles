@@ -1,12 +1,9 @@
+# config.fish is executed last
+# init tmux here
+set -x TERM screen-256color
+
 if status is-interactive
 and not set -q TMUX
-    exec tmux
+    exec tmux attach
 
 end
-
-alias v=nvim
-alias vi=nvim
-alias vim=nvim
-
-export EDITOR=nvim
-

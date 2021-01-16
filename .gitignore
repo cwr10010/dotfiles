@@ -1,3 +1,8 @@
 .DS_Store
 **/.DS_Store
+
 **/.netrwhist
+
+config/vifm/vifminfo.json
+config/fish/conf.d/zz-local.fish
+

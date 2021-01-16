@@ -15,7 +15,7 @@
 % \setkomavar{frombank}{}
 % \setkomavar{location}{\\[8ex]\raggedleft{\footnotesize{\usekomavar{fromaddress}\\Mobil: \usekomavar{fromphone}}}}%% Beside the address field
 %---------------------------------------------------------------------------
-\firsthead{
+\setkomavar{firsthead}{
   \begin{flushright}
     \renewcommand{\baselinestretch}{0.8}
     \LARGE \color{firstnamecolor}\myFirstname\ \color{familynamecolor}\myFamilyname\\
@@ -24,7 +24,7 @@
   \end{flushright}
 }
 %---------------------------------------------------------------------------
-\firstfoot{
+\setkomavar{firstfoot}{
   \centering
   \parbox{0.8\textwidth}{
     \centering
