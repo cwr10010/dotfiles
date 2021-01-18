@@ -6,8 +6,8 @@ read xctinstalled
 
 if [ "$xctinstalled" != "y" ]
 then
-	echo "exiting..."
-	exit 1
+  echo "exiting..."
+  exit 1
 fi
 
 if [ "$BASH" != "/bin/bash" ]
@@ -29,11 +29,11 @@ case "$SYSTEM" in
             exit 2
         fi
         brew install python3 ruby graphviz harfbuzz coreutils libevent tmux \
-			git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
-			wget xz sqlite urlview uptime psutils alacritty nvim fish peco \
-      fzf the_silver_searcher git-delta bat
+        git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
+        wget xz sqlite urlview uptime psutils alacritty nvim fish peco \
+        fzf the_silver_searcher git-delta bat
 
-		export TEXMF_LOCATION=Library/
+        export TEXMF_LOCATION=Library/
         ;;
     Linux) echo "Found Linux environment"
         # think about checking if tmux, vim and stuff are installed
@@ -66,22 +66,16 @@ function create_symlink() {
 git clone https://github.com/cwr10010/dotfiles.git ~/.dotfiles
 
 create_if_not_exists ~/.config
-#create_symlink ~/.dotfiles/config/powerline ~/.config/powerline
 create_symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
 create_symlink ~/.dotfiles/config/nvim ~/.config/nvim
 create_symlink ~/.dotfiles/config/tmux ~/.config/tmux
 create_symlink ~/.dotfiles/config/fish ~/.config/fish
 create_symlink ~/.dotfiles/config/peco ~/.config/peco
 
-#pip3 install --user git+git://github.com/powerline/powerline
-
-create_symlink ~/.dotfiles/vimrc ~/.vimrc
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-#rm -rf ~/.vim/bundle/*
-#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 nvim +PlugInstall! +qall!
 
 create_symlink ~/.dotfiles/tmux.conf ~/.tmux.conf
@@ -91,19 +85,17 @@ sh ~/.tmux/plugins/tpm/bin/install_plugins
 
 create_symlink ~/dotfiles/texmf ~/$(TEXMF_LOCATION)texmf
 
-if [ -d ~/.oh-my-zsh ]
-then
-    create_if_not_exists ~/.oh-my-zsh/custom/
-    create_symlink ~/.dotfiles/zshrc ~/.zshrc
-    create_symlink ~/.dotfiles/zsh_custom/themes ~/.oh-my-zsh/custom/themes
-else
-    echo "Oh-my-zsh not found, skip setup"
-fi
+
+curl -L https://get.oh-my.fish > /tmp/install
+fish /tmp/install --path=~/.local/share/omf --config=~/.config/omf
+rm /tmp/install
 
 if [ -d ~/.config/omf ]
 then
-	  omf install spacefish
-		omf install peco
+  omf install spacefish
+  omf install peco
+  omf install brew
+  omf install rvm
 fi
 
 exit 0
