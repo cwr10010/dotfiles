@@ -4,7 +4,9 @@ Plug 'justinmk/vim-sneak'
 Plug 'romainl/vim-cool'
 Plug 'Stautob/vim-fish'
 
-Plug 'kien/ctrlp.vim'
+""Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vifm/vifm.vim'
 
@@ -87,6 +89,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 let &colorcolumn="80,".join(range(120,999),",") " set a bar at 80 columns
 set number
@@ -99,11 +102,21 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! LineNr ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey
 hi! CursorLineNr ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 hi! SignColumn guibg=NONE ctermbg=NONE ctermfg=white
+hi! EndOfBuffer ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" fzf
+nmap <C-P> :FZF<CR>
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
 " vim-sneak
 let g:sneak#label = 1
 
@@ -154,19 +167,19 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
-nmap <silent> <leader>r :CtrlPBuffer<cr>
-let g:ctrlp_map='<leader>t'
-let g:ctrlp_dotfiles=1
-let g:ctrlp_working_path_mode = 'ra'
+" nmap <silent> <leader>r :CtrlPBuffer<cr>
+" let g:ctrlp_map='<leader>t'
+" let g:ctrlp_dotfiles=1
+" let g:ctrlp_working_path_mode = 'ra'
 
 " CtrlP ignore patterns
-let g:ctrlp_custom_ignore = {
-            \ 'dir': '\.git$\|node_modules$\|\.hg$\|\.svn$',
-            \ 'file': '\.exe$\|\.so$'
-            \ }
+" let g:ctrlp_custom_ignore = {
+"             \ 'dir': '\.git$\|node_modules$\|\.hg$\|\.svn$',
+"             \ 'file': '\.exe$\|\.so$'
+"             \ }
 
 " search the nearest ancestor that contains .git, .hg, .svn
-let g:ctrlp_working_path_mode = 2
+" let g:ctrlp_working_path_mode = 2
 
 " Goyo / Limelight nondistructive writing
 let g:limelight_conceal_ctermfg = 'gray'

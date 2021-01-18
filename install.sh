@@ -30,7 +30,8 @@ case "$SYSTEM" in
         fi
         brew install python3 ruby graphviz harfbuzz coreutils libevent tmux \
 			git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
-			wget xz sqlite urlview uptime psutils alacritty nvim fish peco
+			wget xz sqlite urlview uptime psutils alacritty nvim fish peco \
+      fzf the_silver_searcher git-delta bat
 
 		export TEXMF_LOCATION=Library/
         ;;
