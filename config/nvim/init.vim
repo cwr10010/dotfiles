@@ -49,12 +49,12 @@ set wildmenu
 set wildmode=longest,full,full
 
 " All about tabs
-set noexpandtab " tabs ftw
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=2 " the visible width of tabs
-set softtabstop=2 " edit as if the tabs are 4 characters wide
-set shiftwidth=2 " number of spaces to use for indent and unindent
-set shiftround " round indent to a multiple of 'shiftwidth'
+set expandtab
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
 
 " set cliboard for dealing with systems
 set clipboard=unnamed
@@ -88,17 +88,17 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
-" some ui things
 let &colorcolumn="80,".join(range(120,999),",") " set a bar at 80 columns
-set number " show line numbers
+set number
+set relativenumber
 
-"silent! colorscheme solarized
 set background=dark
 colorscheme PaperColor
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! LineNr ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey
-hi! SignColumn guibg=NONE ctermbg=NONE
+hi! CursorLineNr ctermbg=NONE ctermfg=white guibg=NONE guifg=white
+hi! SignColumn guibg=NONE ctermbg=NONE ctermfg=white
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -106,6 +106,14 @@ hi! SignColumn guibg=NONE ctermbg=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-sneak
 let g:sneak#label = 1
+
+" git-gutter
+let g:gitgutter_override_sign_column_highlight = 0
+hi! clear SignColumn
+hi! GitGutterAdd ctermfg=2 ctermbg=NONE
+hi! GitGutterChange ctermfg=3 ctermbg=NONE
+hi! GitGutterDelete ctermfg=1 ctermbg=NONE
+hi! GitGutterChangeDelete ctermfg=4 ctermbg=NONE
 
 " vifm
 map <leader>vf :Vifm<CR>
@@ -119,6 +127,22 @@ let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>0 <Plug>AirlineSelectTab0
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " Nerdtree
 "let g:NERDTreeQuitOnOpen=0 " close NERDTree after a file is opened
@@ -215,6 +239,7 @@ let g:Tex_GotoError = 0
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+" fix vim commandline having problems with fish
 if &shell =~# 'fish$'
     set shell=sh
 endif
