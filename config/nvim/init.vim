@@ -1,42 +1,51 @@
 call plug#begin('~/.vim/plugged')
 
+" Better search within buffer
 Plug 'justinmk/vim-sneak'
 Plug 'romainl/vim-cool'
+
+" aligning code easily
+Plug 'junegunn/vim-easy-align'
+
+" tmux integration
+Plug 'tmux-plugins/vim-tmux'
+Plug 'benmills/vimux'
+
+" Vim Fish integration
 Plug 'Stautob/vim-fish'
 
-""Plug 'kien/ctrlp.vim'
+" Fuzzy file finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'vifm/vifm.vim'
 
+" Better netrw
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" All Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-Plug 'tmux-plugins/vim-tmux'
-Plug 'benmills/vimux'
-Plug 'junegunn/vim-easy-align'
-
+" non destructive editing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" Airline theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 
+" latex tools integration
 Plug 'vim-latex/vim-latex'
+
+" Golang integration
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Python plugins
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-"if has('python3')
-"        Bundle 'Valloric/YouCompleteMe'
-"endif
-Plug 'w0ng/vim-hybrid'
 Plug 'nvie/vim-flake8'
-"Plug 'nvie/vim-pyunit'
 
+" Puppet integration
 Plug 'rodjek/vim-puppet'
 
 call plug#end()
@@ -103,6 +112,8 @@ hi! LineNr ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey
 hi! CursorLineNr ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 hi! SignColumn guibg=NONE ctermbg=NONE ctermfg=white
 hi! EndOfBuffer ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey
+hi! BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,12 +121,9 @@ hi! EndOfBuffer ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " fzf
-nmap <C-P> :FZF<CR>
-" [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
-
-" [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+nnoremap <C-P> :FZF<CR>
 
 " vim-sneak
 let g:sneak#label = 1
@@ -128,13 +136,6 @@ hi! GitGutterChange ctermfg=3 ctermbg=NONE
 hi! GitGutterDelete ctermfg=1 ctermbg=NONE
 hi! GitGutterChangeDelete ctermfg=4 ctermbg=NONE
 
-" vifm
-map <leader>vf :Vifm<CR>
-map <leader>vs :VsplitVifm<CR>
-map <leader>sp :SplitVifm<CR>
-map <leader>dv :DiffVifm<CR>
-map <leader>tv :TabVifm<CR>
-
 " Airline
 let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
@@ -144,42 +145,25 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>0 <Plug>AirlineSelectTab0
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>+ <Plug>AirlineSelectNextTab
+nnoremap <leader>1 <Plug>AirlineSelectTab1
+nnoremap <leader>2 <Plug>AirlineSelectTab2
+nnoremap <leader>3 <Plug>AirlineSelectTab3
+nnoremap <leader>4 <Plug>AirlineSelectTab4
+nnoremap <leader>5 <Plug>AirlineSelectTab5
+nnoremap <leader>6 <Plug>AirlineSelectTab6
+nnoremap <leader>7 <Plug>AirlineSelectTab7
+nnoremap <leader>8 <Plug>AirlineSelectTab8
+nnoremap <leader>9 <Plug>AirlineSelectTab9
+nnoremap <leader>0 <Plug>AirlineSelectTab0
+nnoremap <leader>- <Plug>AirlineSelectPrevTab
+nnoremap <leader>+ <Plug>AirlineSelectNextTab
 
 " Nerdtree
-"let g:NERDTreeQuitOnOpen=0 " close NERDTree after a file is opened
-"let NERDTreeShowHidden=1 " show hidden files in NERDTree
-"let NERDTreeIgnore = ['\.pyc$'] " ignore certain files
-
-"nmap <silent> <leader>k :NERDTreeToggle<cr>
-"nmap <silent> <leader>y :NERDTreeFind<cr>
-
-" map fuzzyfinder (CtrlP) plugin
-" nmap <silent> <leader>t :CtrlP<cr>
-" nmap <silent> <leader>r :CtrlPBuffer<cr>
-" let g:ctrlp_map='<leader>t'
-" let g:ctrlp_dotfiles=1
-" let g:ctrlp_working_path_mode = 'ra'
-
-" CtrlP ignore patterns
-" let g:ctrlp_custom_ignore = {
-"             \ 'dir': '\.git$\|node_modules$\|\.hg$\|\.svn$',
-"             \ 'file': '\.exe$\|\.so$'
-"             \ }
-
-" search the nearest ancestor that contains .git, .hg, .svn
-" let g:ctrlp_working_path_mode = 2
+let g:NERDTreeQuitOnOpen=0 " close NERDTree after a file is opened
+let NERDTreeShowHidden=1 " show hidden files in NERDTree
+let NERDTreeIgnore = ['\.pyc$'] " ignore certain files
+nnoremap <silent> <leader>k :NERDTreeToggle<cr>
+nnoremap <silent> <leader>y :NERDTreeFind<cr>
 
 " Goyo / Limelight nondistructive writing
 let g:limelight_conceal_ctermfg = 'gray'
@@ -247,12 +231,8 @@ let g:Tex_ViewRule_pdf = 'open'
 let g:Tex_GotoError = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" General Coding settings
-"""""""""""""""""""""""""""""""""""""""""""""""""
-highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
 " fix vim commandline having problems with fish
+"""""""""""""""""""""""""""""""""""""""""""""""""
 if &shell =~# 'fish$'
     set shell=sh
 endif
