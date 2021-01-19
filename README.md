@@ -9,9 +9,9 @@ All steps are based on (mac)OS (X) with [Xcode](https://developer.apple.com/xcod
 ### What will be installed with several plugins and extensions:
 
  * [Alacritty](https://github.com/alacritty/alacritty)
- * [Fish Shell](https://fishshell.com)
- * [Tmux](https://github.com/tmux/tmux)
- * [NeoVIM](https://neovim.io)
+ * [fish shell](https://fishshell.com)
+ * [tmux](https://github.com/tmux/tmux)
+ * [neovim](https://neovim.io)
 
 ### Optional / Final Things
 
