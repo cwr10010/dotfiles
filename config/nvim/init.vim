@@ -15,7 +15,7 @@ Plug 'benmills/vimux'
 Plug 'Stautob/vim-fish'
 
 " Fuzzy file finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Better netrw
@@ -48,6 +48,9 @@ Plug 'nvie/vim-flake8'
 " Puppet integration
 Plug 'rodjek/vim-puppet'
 
+" Code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 filetype plugin indent on
@@ -55,9 +58,8 @@ filetype plugin indent on
 let mapleader = ','
 
 " completion on commandline
-set autoread wildmode=longest,list,full " detect when a file is changed
+set autoread wildmode=longest,full,full
 set wildmenu
-set wildmode=longest,full,full
 
 " All about tabs
 set expandtab
@@ -166,6 +168,7 @@ nnoremap <silent> <leader>k :NERDTreeToggle<cr>
 nnoremap <silent> <leader>y :NERDTreeFind<cr>
 
 " Goyo / Limelight nondistructive writing
+let g:limelight_conceal_ctermbg = 'NONE'
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = 'DarkGray'
@@ -175,7 +178,7 @@ function! s:goyo_enter()
     set noshowmode
     set noshowcmd
     set nocursorline
-    "CocDisable
+    CocDisable
     Limelight
 endfunction
 
@@ -183,7 +186,7 @@ function! s:goyo_leave()
     set showmode
     set showcmd
     set cursorline
-    "CocEnable
+    CocEnable
     Limelight!
 endfunction
 
