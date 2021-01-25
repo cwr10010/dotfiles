@@ -34,6 +34,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 
+" Code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " latex tools integration
 Plug 'vim-latex/vim-latex'
 
@@ -48,8 +51,8 @@ Plug 'nvie/vim-flake8'
 " Puppet integration
 Plug 'rodjek/vim-puppet'
 
-" Code completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Ansible integration
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
