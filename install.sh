@@ -28,6 +28,8 @@ case "$SYSTEM" in
             echo "Brew not found"
             exit 2
         fi
+        brew tap homebrew/cask-fonts
+        brew install font-meslo-for-powerline
         brew install python3 ruby graphviz harfbuzz coreutils libevent tmux \
         git reattach-to-user-namespace maven tree ssh-copy-id wakeonlan \
         wget xz sqlite urlview uptime psutils alacritty nvim fish peco \
