@@ -1,0 +1,2 @@
+source (jenv init -|psub)
+

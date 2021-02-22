@@ -15,7 +15,8 @@ Plug 'benmills/vimux'
 Plug 'Stautob/vim-fish'
 
 " Fuzzy file finder
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf.vim'
 
 " Better netrw
