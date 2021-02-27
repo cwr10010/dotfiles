@@ -18,6 +18,7 @@ Plug 'Stautob/vim-fish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 
 " Better netrw
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -142,6 +143,11 @@ hi! GitGutterAdd ctermfg=2 ctermbg=NONE
 hi! GitGutterChange ctermfg=3 ctermbg=NONE
 hi! GitGutterDelete ctermfg=1 ctermbg=NONE
 hi! GitGutterChangeDelete ctermfg=4 ctermbg=NONE
+
+" vim-fugative
+nmap <leader>gs :G<CR>
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
 
 " Airline
 let g:airline_theme='papercolor'
