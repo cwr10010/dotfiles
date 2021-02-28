@@ -146,8 +146,12 @@ hi! GitGutterChangeDelete ctermfg=4 ctermbg=NONE
 
 " vim-fugative
 nmap <leader>gs :G<CR>
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gc :Git commit<CR>
+nmap <leader>gl :Git log<CR>
+nmap <leader>gb :GCheckout
+nmap <leader>gp :Git push<CR>
 
 " Airline
 let g:airline_theme='papercolor'
