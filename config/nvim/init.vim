@@ -56,6 +56,10 @@ Plug 'rodjek/vim-puppet'
 " Ansible integration
 Plug 'pearofducks/ansible-vim'
 
+" Typescript integration
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
 call plug#end()
 
 filetype plugin indent on
