@@ -60,6 +60,10 @@ Plug 'pearofducks/ansible-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
+" VimWiki
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
+
 call plug#end()
 
 filetype plugin indent on
@@ -252,6 +256,10 @@ let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode "$*"'
 let g:Tex_ViewRule_pdf = 'open'
 let g:Tex_GotoError = 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" VimZettel / VimWiki
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:nv_search_paths = ['~/Documents/100 - Notizen']
 """""""""""""""""""""""""""""""""""""""""""""""""
 " fix vim commandline having problems with fish
 """""""""""""""""""""""""""""""""""""""""""""""""
