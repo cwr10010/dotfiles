@@ -114,7 +114,8 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-nmap <A-b> :Buffers
+nnoremap <C-B> :Buffers<CR>
+nnoremap <C-A> :Ag<CR>
 
 let &colorcolumn="80,".join(range(120,999),",") " set a bar at 80 columns
 set number
