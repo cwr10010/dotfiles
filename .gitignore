@@ -5,4 +5,5 @@
 
 config/vifm/vifminfo.json
 config/fish/conf.d/zz-local.fish
+config/fish/fish_variables
 
