@@ -1,2 +1,2 @@
-source (jenv init -|psub)
+source (jenv init - fish|psub)
 

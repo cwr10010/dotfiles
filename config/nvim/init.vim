@@ -64,6 +64,9 @@ Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'vimwiki/vimwiki'
 Plug 'michal-h21/vim-zettel'
 
+" Add support for several language syntax
+Plug 'sheerun/vim-polyglot'
+
 call plug#end()
 
 filetype plugin indent on
@@ -267,3 +270,7 @@ let g:Tex_GotoError = 0
 if &shell =~# 'fish$'
     set shell=sh
 endif
+
+" deactivate unused providers
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
