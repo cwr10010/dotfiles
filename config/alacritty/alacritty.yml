@@ -9,7 +9,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - "tmux -u attach || tmux -u"
 
 window:
   dimensions:
@@ -19,6 +19,7 @@ window:
     x: 10
     y: 10
   decorations: buttonless
+  opacity: 0.95
 
   #startup_mode: Windowed
   #dynamic_title: true
@@ -100,7 +101,6 @@ colors:
 
 bell:
   animation: EaseOutExpo
-background_opacity: 0.95
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
