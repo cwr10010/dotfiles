@@ -1,1 +1,0 @@
-/Users/crose/.local/share/omf/themes/starship/fish_prompt.fish
