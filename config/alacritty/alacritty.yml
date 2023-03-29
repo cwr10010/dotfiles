@@ -20,6 +20,7 @@ window:
     y: 10
   decorations: buttonless
   opacity: 0.95
+  option_as_alt: None
 
   #startup_mode: Windowed
   #dynamic_title: true
@@ -130,8 +131,6 @@ hints:
      binding:
        key: U
        mods: Control|Shift
-
-alt_send_esc: false
 
 #key_bindings:
   #- { key: Paste,                                       action: Paste          }
