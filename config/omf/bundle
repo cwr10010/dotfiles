@@ -1,0 +1,7 @@
+package brew
+package https://github.com/catppuccin/fish
+package keychain
+package peco
+package ssh-term-helper
+package yadd
+theme default

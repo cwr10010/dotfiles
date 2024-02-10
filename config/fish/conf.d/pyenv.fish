@@ -1,3 +1,3 @@
-status is-login; and pyenv init --path | source
+alias pip pip3
 pyenv init - | source
 

@@ -1,2 +1,2 @@
-source (jenv init - fish|psub)
+status --is-interactive; and jenv init - | source
 

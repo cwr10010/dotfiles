@@ -10,7 +10,8 @@
 \setkomavar{fromemail}{\myMail}
 \setkomavar{backaddressseparator}{. }
 \setkomavar{signature}{
-	\includegraphics[scale=0.65]{unterschrift.png}\\
+%	\includegraphics[scale=0.65]{unterschrift.png}\\
+\\
     (\myFirstname\ \myFamilyname)}
 % \setkomavar{frombank}{}
 % \setkomavar{location}{\\[8ex]\raggedleft{\footnotesize{\usekomavar{fromaddress}\\Mobil: \usekomavar{fromphone}}}}%% Beside the address field
