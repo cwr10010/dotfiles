@@ -70,6 +70,10 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- !!!
+    -- dartls is setup via flutter-tools
+    -- !!!
+
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,

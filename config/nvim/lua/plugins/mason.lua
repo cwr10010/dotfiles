@@ -37,6 +37,9 @@ return {
         "ktlint",
         "prettier",
         "stylua",
+        "isort",
+        "black",
+        "flake8",
       },
     })
   end,
