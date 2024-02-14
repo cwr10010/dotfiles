@@ -1,25 +1,46 @@
 # My collection of dotfiles. (WIP)
 
 ## Setup
+
 All steps are based on (mac)OS (X) with [Xcode](https://developer.apple.com/xcode/) with installed Commandline Tools and [Homebrew](http://brew.sh) installed
 
 ### Short way, if /bin/sh does link to bash:
+
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/cwr10010/dotfiles/master/install.sh)"
 
 ### What will be installed with several plugins and extensions:
 
- * [Alacritty](https://github.com/alacritty/alacritty)
- * [fish shell](https://fishshell.com)
- * [tmux](https://github.com/tmux/tmux)
- * [neovim](https://neovim.io)
+- [Alacritty](https://github.com/alacritty/alacritty)
+- [fish shell](https://fishshell.com)
+- [tmux](https://github.com/tmux/tmux)
+- [neovim](https://neovim.io)
+- Additional tools that are required for tmux/neovim/lazy up-front:
+
+```
+  brew install gnu-sed
+  brew install rg
+  brew install fd
+  brew install lazygit
+  brew install lspconfig
+  brew install trivy
+  brew install ast-grep
+  brew install dart-sdk
+  brew install nvim-dap
+  brew install texlab
+```
+
+- And the font:
+
+  MesloLGS Nerd Font (https://www.nerdfonts.com/font-downloads)
 
 ### Optional / Final Things
 
 Make Fish the standard shell:
-    echo (which fish) | sudo tee -a /etc/shells
-    chsh -s (which fish)
+echo (which fish) | sudo tee -a /etc/shells
+chsh -s (which fish)
 
 ### LaTeX Letter Template
+
 You can create a Scrlttr2 Letter with ease and a nice layout. These dotfiles provide Scrlttr2 .lco for that. Simply create a me.lco with your address data in the directory your .tex file of the letter will be, with the following content
 
     \newcommand{\myFirstname}{FIRSTNAME}
@@ -72,4 +93,3 @@ And then you can use that simply by creating your TeX file
     %---------------------------------------------------------------------------
 
 and replace 'me' with the name of your .lco file (without the extention)
-
