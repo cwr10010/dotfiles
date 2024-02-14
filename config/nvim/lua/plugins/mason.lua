@@ -24,6 +24,7 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
+        "lua_ls",
         "kotlin_language_server",
         "docker_compose_language_service",
         "dockerls",
@@ -39,7 +40,7 @@ return {
         "stylua",
         "isort",
         "black",
-        "flake8",
+        "pylint",
       },
     })
   end,

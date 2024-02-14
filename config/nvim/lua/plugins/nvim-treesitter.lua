@@ -30,6 +30,10 @@ return {
         enable = true,
       },
       ensure_installed = {
+        "dart",
+        "regex",
+        "kotlin",
+        "python",
         "json",
         "javascript",
         "typescript",

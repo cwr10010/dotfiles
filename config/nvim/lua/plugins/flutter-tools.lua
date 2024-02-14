@@ -1,5 +1,11 @@
 return {
   "akinsho/flutter-tools.nvim",
+  dependencies = {
+    "RobertBrunhage/flutter-riverpod-snippets",
+    "nvim-lua/plenary.nvim",
+    "stevearc/dressing.nvim", -- optional for vim.ui.select
+  },
+  config = true,
   event = "VeryLazy",
   opts = function()
     require("telescope").load_extension("flutter")
@@ -10,29 +16,25 @@ return {
         run_via_dap = false,
         exception_breakpoints = {},
       },
-      outline = { auto_open = false },
+      outline = { auto_open = true },
       decorations = {
         statusline = { device = true, app_version = true },
       },
-      widget_guides = { enabled = true, debug = false },
-      dev_log = { enabled = true, open_cmd = "tabedit" },
+      widget_guides = { enabled = true },
+      dev_log = { enabled = true, notify_errors = true, open_cmd = "tabedit" },
       lsp = {
         color = {
           enabled = true,
           background = true,
-          virtual_text = false,
         },
         settings = {
-          showTodos = false,
-          renameFilesWithClasses = "always",
+          showTodos = true,
+          renameFilesWithClasses = "prompt",
           updateImportsOnRename = true,
           completeFunctionCalls = true,
-          lineLength = 100,
+          lineLength = 120,
         },
       },
     }
   end,
-  dependencies = {
-    { "RobertBrunhage/flutter-riverpod-snippets" },
-  },
 }
