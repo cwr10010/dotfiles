@@ -14,21 +14,6 @@ All steps are based on (mac)OS (X) with [Xcode](https://developer.apple.com/xcod
 - [fish shell](https://fishshell.com)
 - [tmux](https://github.com/tmux/tmux)
 - [neovim](https://neovim.io)
-- Additional tools that are required for tmux/neovim/lazy up-front:
-
-```
-  brew install gnu-sed
-  brew install rg
-  brew install fd
-  brew install lazygit
-  brew install lspconfig
-  brew install trivy
-  brew install ast-grep
-  brew install dart-sdk
-  brew install nvim-dap
-  brew install texlab
-```
-
 - And the font:
 
   MesloLGS Nerd Font (https://www.nerdfonts.com/font-downloads)
