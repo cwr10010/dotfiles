@@ -29,6 +29,10 @@ return {
         "docker_compose_language_service",
         "dockerls",
         "texlab",
+        "cssls",
+        "tsserver",
+        "helm_ls",
+        "yamlls",
       },
       automatic_installation = true,
     })
@@ -41,6 +45,11 @@ return {
         "isort",
         "black",
         "pylint",
+        "htmlhint",
+        "jsonlint",
+        "htmlbeautifier",
+        "latexindent",
+        "prettierd",
       },
     })
   end,

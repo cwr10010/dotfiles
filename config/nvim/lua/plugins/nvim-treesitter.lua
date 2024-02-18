@@ -24,15 +24,19 @@ return {
         enable = true,
       },
       -- enable indentation
-      indent = { enable = true },
+      indent = {
+        enable = true,
+      },
       -- enable autotagging (w/ nvim-ts-autotag plugin)
       autotag = {
         enable = true,
       },
       ensure_installed = {
         "bash",
+        "c",
         "css",
         "dart",
+        "devicetree",
         "dockerfile",
         "gitignore",
         "html",
@@ -62,6 +66,17 @@ return {
       ignore_install = {},
       auto_install = true,
       sync_install = false,
+    })
+
+    vim.api.nvim_create_autocmd({
+      "BufNewFile",
+      "BufRead",
+    }, {
+      pattern = "*.keymap",
+      callback = function()
+        local buf = vim.api.nvim_get_current_buf()
+        vim.api.nvim_buf_set_option(buf, "filetype", "devicetree")
+      end,
     })
 
     require("ts_context_commentstring").setup({})

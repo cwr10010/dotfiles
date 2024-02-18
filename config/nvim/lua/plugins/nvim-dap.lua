@@ -1,18 +1,10 @@
 return {
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {
-      defaults = {
-        ["<leader>d"] = { name = "+DAP" },
-      },
-    },
-  },
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
       { "rcarriga/nvim-dap-ui" },
       { "theHamsta/nvim-dap-virtual-text" },
+      { "Mgenuit/nvim-dap-kotlin", config = true },
     },
     -- stylua: ignore
     keys = {
@@ -29,7 +21,7 @@ return {
       { "<leader>dS", function() require("dap.ui.widgets").scopes() end, desc = "Scopes", },
       { "<leader>di", function() require("dap").step_into() end, desc = "Step Into", },
       { "<leader>do", function() require("dap").step_over() end, desc = "Step Over", },
-      { "<leader>dp", function() require("dap").pause.toggle() end, desc = "Pause", },
+      { "<leader>dp", function() require("dap").pause() end, desc = "Pause", },
       { "<leader>dq", function() require("dap").close() end, desc = "Quit", },
       { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL", },
       { "<leader>ds", function() require("dap").continue() end, desc = "Start", },
@@ -79,7 +71,7 @@ return {
       })
 
       local dap, dapui = require("dap"), require("dapui")
-      dapui.setup({})
+      dapui.setup()
 
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
