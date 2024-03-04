@@ -26,6 +26,6 @@ return {
       "specifier changed to",
       "Token not allowed in a PDF string",
     }
-    vim.g["vimtex_context_pdf_viewer"] = "okular"
+    vim.g["vimtex_context_pdf_viewer"] = "skim"
 end,
 }
