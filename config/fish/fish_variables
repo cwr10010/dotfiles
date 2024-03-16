@@ -8,8 +8,8 @@ SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export PYENV_ROOT:/Users/carsten/\x2epyenv
-SETUVAR --export SSH_AGENT_PID:3219
-SETUVAR --export SSH_AUTH_SOCK:/var/folders/vf/w7_ghk0j61d1d4g3jvsm439m0000gn/T//ssh\x2ddzBCyFV1J5QO/agent\x2e3217
+SETUVAR --export SSH_AGENT_PID:2088
+SETUVAR --export SSH_AUTH_SOCK:/var/folders/vf/w7_ghk0j61d1d4g3jvsm439m0000gn/T//ssh\x2d1xbnszPo4knC/agent\x2e2082
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:737994
 SETUVAR fish_color_cancel:e78284
