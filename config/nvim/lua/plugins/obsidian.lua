@@ -1,7 +1,7 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
-  lazy = false,
+  lazy = true,
   ft = "markdown",
 
   keys = {
@@ -17,8 +17,10 @@ return {
   event = {
     -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
     -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-    "BufReadPre ~/Cloud/Obsidian/**.md",
-    "BufNewFile ~/Cloud/Obsidian/**.md",
+    "BufReadPre "
+      .. vim.fn.expand("~")
+      .. "/Cloud/Obsidian/**.md",
+    "BufNewFile " .. vim.fn.expand("~") .. "/Cloud/Obsidian/**.md",
   },
   opts = {
     workspaces = {
