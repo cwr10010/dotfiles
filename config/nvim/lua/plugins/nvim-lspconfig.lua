@@ -97,15 +97,16 @@ return {
     lspconfig["kotlin_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = {
-        kotlin = {
-          compiler = {
-            jvm = {
-              target = "17",
-            },
-          },
-        },
-      },
+    })
+
+    lspconfig["gradle_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["java_language_server"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
 
     lspconfig["dockerls"].setup({

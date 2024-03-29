@@ -4,6 +4,10 @@
 
 All steps are based on (mac)OS (X) with [Xcode](https://developer.apple.com/xcode/) with installed Commandline Tools and [Homebrew](http://brew.sh) installed
 
+Additionally you need SDKMan:
+
+    curl -s "https://get.sdkman.io" | bash
+
 ### Short way, if /bin/sh does link to bash:
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/cwr10010/dotfiles/master/install.sh)"

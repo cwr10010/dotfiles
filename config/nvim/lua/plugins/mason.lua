@@ -25,7 +25,9 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "lua_ls",
+        "gradle_ls",
         "kotlin_language_server",
+        "java_language_server",
         "docker_compose_language_service",
         "dockerls",
         "texlab",
@@ -50,6 +52,7 @@ return {
         "htmlbeautifier",
         "latexindent",
         "prettierd",
+        "java-test",
       },
     })
   end,
