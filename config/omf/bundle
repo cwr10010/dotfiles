@@ -3,6 +3,7 @@ package foreign-env
 package fzf
 package https://github.com/catppuccin/fish
 package keychain
+package nvm
 package sdk
 package ssh-term-helper
 package yadd
