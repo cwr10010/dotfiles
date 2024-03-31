@@ -3,7 +3,8 @@ return {
   dependencies = {
     "joelspadin/tree-sitter-devicetree",
   },
-  event = "VeryLazy",
+  ft = "devicetree",
+  lazy = true,
   config = function()
     local qmk = require("qmk")
     qmk.setup({

@@ -1,6 +1,7 @@
 return {
   "lervag/vimtex",
-  event = "VeryLazy",
+  ft = "tex",
+  lazy = true,
   config = function()
     vim.api.nvim_create_autocmd({ "FileType" }, {
       group = vim.api.nvim_create_augroup("edit_text", { clear = true }),

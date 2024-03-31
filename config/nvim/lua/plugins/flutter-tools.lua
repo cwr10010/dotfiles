@@ -6,7 +6,8 @@ return {
     "stevearc/dressing.nvim", -- optional for vim.ui.select
   },
   config = true,
-  event = "VeryLazy",
+  ft = "dart",
+  lazy = true,
   opts = function()
     require("telescope").load_extension("flutter")
     return {
