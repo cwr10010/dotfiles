@@ -57,6 +57,9 @@ return {
 
       opts.desc = "Restart LSP"
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+      opts.desc = "Format current Buffer"
+      keymap.set("n", "<leader>bf", vim.lsp.buf.format, opts)
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
@@ -142,6 +145,12 @@ return {
     lspconfig["yamlls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+    })
+
+    lspconfig["pyright"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "python" },
     })
   end,
 }

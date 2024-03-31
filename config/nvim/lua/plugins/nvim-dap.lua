@@ -5,6 +5,14 @@ return {
       { "rcarriga/nvim-dap-ui" },
       { "theHamsta/nvim-dap-virtual-text" },
       { "Mgenuit/nvim-dap-kotlin", config = true },
+      {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        config = function(_, opts)
+          local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+          require("dap-python").setup(path)
+        end,
+      },
     },
     -- stylua: ignore
     keys = {
