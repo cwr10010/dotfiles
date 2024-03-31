@@ -7,6 +7,8 @@ return {
     conform.setup({
       formatters_by_ft = {
         kotlin = { "ktlint" },
+        dart = { "dart_format" },
+        fish = { "fish_format" },
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
