@@ -22,6 +22,7 @@ return {
     treesitter.setup({ -- enable syntax highlighting
       highlight = {
         enable = true,
+        disable = { "latex" },
       },
       -- enable indentation
       indent = {
@@ -50,7 +51,6 @@ return {
         "query",
         "regex",
         "typescript",
-        "tsx",
         "vim",
         "yaml",
       },

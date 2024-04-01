@@ -30,7 +30,6 @@ return {
         "java_language_server",
         "docker_compose_language_service",
         "dockerls",
-        "texlab",
         "cssls",
         "tsserver",
         "helm_ls",
