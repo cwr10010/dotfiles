@@ -4,6 +4,7 @@ return {
     branch = "0.1.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
     },
   },
   {
@@ -17,6 +18,8 @@ return {
         },
       })
       require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("noice")
+      require("telescope").load_extension("undo")
     end,
   },
 }
