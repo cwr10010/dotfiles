@@ -4,6 +4,7 @@ package fzf
 package https://github.com/catppuccin/fish
 package keychain
 package nvm
+package peco
 package sdk
 package ssh-term-helper
 package yadd
