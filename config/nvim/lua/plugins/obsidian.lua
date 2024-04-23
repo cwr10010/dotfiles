@@ -19,14 +19,18 @@ return {
     -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
     "BufReadPre "
       .. vim.fn.expand("~")
-      .. "/Cloud/Obsidian/**.md",
-    "BufNewFile " .. vim.fn.expand("~") .. "/Cloud/Obsidian/**.md",
+      .. "/Documents/Obsidian/**.md",
+    "BufNewFile " .. vim.fn.expand("~") .. "/Documents/Obsidian/**.md",
   },
   opts = {
     workspaces = {
       {
         name = "personal",
-        path = "~/Cloud/Obsidian",
+        path = "~/Documents/Obsidian",
+      },
+      {
+        name = "work",
+        path = "~/Documents/Obsidian",
       },
     },
 
