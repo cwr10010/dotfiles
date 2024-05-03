@@ -9,6 +9,7 @@ return {
         ["<leader>o"] = { name = "+Obsidian" },
         ["<leader>m"] = { "<cmd>Mason<cr>", "Mason" },
         ["<leader>S"] = { name = "+Split" },
+        ["<leader>t"] = { name = "+test" },
       },
     },
   },
