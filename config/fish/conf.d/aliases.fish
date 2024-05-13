@@ -1,3 +1,3 @@
-alias obs "cd ~/Cloud/Obsidian/"
+alias obs "cd ~/Documents/Obsidian/"
 alias dot "cd ~/.dotfiles/"
 alias work "cd ~/IdeaProjects/"

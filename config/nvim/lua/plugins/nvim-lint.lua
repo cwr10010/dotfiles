@@ -1,10 +1,8 @@
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local lint = require("lint")
-
-    lint.linters_by_ft = {
+  opts = {
+    linters_by_ft = {
       kotlin = { "ktlint" },
       python = {
         "pylint",
@@ -14,8 +12,17 @@ return {
       fish = { "fish" },
       json = { "jsonlint" },
       yaml = { "yamllint" },
-      markdown = { "markdownlint" },
-    }
+      markdown = { "markdownlint", "vale" },
+    },
+  },
+  config = function()
+    local lint = require("lint")
+    --lint.linters.markdownlint.args = {
+    --  "--disable",
+    --  "MD013",
+    --  "MD007",
+    --  "--", -- Required
+    --}
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 

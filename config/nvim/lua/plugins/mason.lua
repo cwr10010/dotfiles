@@ -57,6 +57,7 @@ return {
         "latexindent",
         "prettierd",
         "java-test",
+        "vale",
         "yamllint",
       },
     })
