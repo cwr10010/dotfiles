@@ -10,6 +10,7 @@ return {
         ["<leader>m"] = { "<cmd>Mason<cr>", "Mason" },
         ["<leader>S"] = { name = "+Split" },
         ["<leader>t"] = { name = "+test" },
+        ["<leader>Z"] = { "<cmd>ZenMode<cr>", "ZenMode" },
       },
     },
   },

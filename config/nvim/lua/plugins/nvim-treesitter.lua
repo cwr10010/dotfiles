@@ -4,6 +4,7 @@ return {
   build = ":TSUpdate",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
   },
   opts = function(_, opts)
@@ -76,7 +77,7 @@ return {
       pattern = "*.keymap",
       callback = function()
         local buf = vim.api.nvim_get_current_buf()
-        vim.api.nvim_buf_set_option(buf, "filetype", "devicetree")
+        vim.api.nvim_set_option_value("filetype", "devicetree", { buf = buf })
       end,
     })
 
