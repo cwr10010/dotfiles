@@ -10,3 +10,7 @@ vim.keymap.set("n", "<leader>S=", "<C-w>=", { desc = "Make splits equal size" })
 vim.keymap.set("n", "<leader>Sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
+
+vim.keymap.set("n", "<leader>m", "<cmd>Mason<CR>", { desc = "Mason" })
+
+vim.keymap.set("n", "<leader>Z", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
