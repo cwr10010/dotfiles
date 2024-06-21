@@ -7,3 +7,4 @@ config/vifm/vifminfo.json
 config/fish/conf.d/zz-local.fish
 
 lazy-lock.json
+config/vale/styles
