@@ -59,6 +59,7 @@ return {
         "java-test",
         "vale",
         "yamllint",
+        "markdown-oxide",
       },
     })
   end,
