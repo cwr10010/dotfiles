@@ -30,7 +30,7 @@ return {
         "docker_compose_language_service",
         "dockerls",
         "cssls",
-        "tsserver",
+        "ts_ls",
         "helm_ls",
         "yamlls",
         "pyright",
