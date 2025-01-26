@@ -28,6 +28,9 @@ Make Fish the standard shell:
 echo (which fish) | sudo tee -a /etc/shells
 chsh -s (which fish)
 
+Initialize vale:
+~/.local/share/nvim/mason/packages/vale/vale --config=$HOME/.config/vale/.vale.ini sync
+
 ### LaTeX Letter Template
 
 You can create a Scrlttr2 Letter with ease and a nice layout. These dotfiles provide Scrlttr2 .lco for that. Simply create a me.lco with your address data in the directory your .tex file of the letter will be, with the following content
