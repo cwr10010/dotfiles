@@ -8,8 +8,8 @@ SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export PYENV_ROOT:/Users/carsten/\x2epyenv
-SETUVAR --export SSH_AGENT_PID:2017
-SETUVAR --export SSH_AUTH_SOCK:/private/tmp/com\x2eapple\x2elaunchd\x2eFKggDsWydn/Listeners
+SETUVAR --export SSH_AGENT_PID:11323
+SETUVAR --export SSH_AUTH_SOCK:/private/tmp/com\x2eapple\x2elaunchd\x2ePBQOCi95KU/Listeners
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:737994
 SETUVAR fish_color_cancel:e78284

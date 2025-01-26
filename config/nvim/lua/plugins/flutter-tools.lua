@@ -9,7 +9,6 @@ return {
   ft = "dart",
   lazy = true,
   opts = function()
-    require("telescope").load_extension("flutter")
     return {
       ui = { border = "rounded" },
       debugger = {
