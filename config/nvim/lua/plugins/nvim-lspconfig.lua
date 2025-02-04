@@ -138,7 +138,7 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["tsserver"].setup({
+    lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -184,6 +184,11 @@ return {
     })
 
     lspconfig["markdown_oxide"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["terraformls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
