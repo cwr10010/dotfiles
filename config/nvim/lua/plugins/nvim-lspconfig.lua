@@ -192,5 +192,12 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+
+    local omnisharp = vim.fn.expand("~/.local/share/nvim/mason/bin/omnisharp")
+    lspconfig["omnisharp"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      cmd = { omnisharp },
+    })
   end,
 }
