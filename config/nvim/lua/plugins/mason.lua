@@ -35,6 +35,7 @@ return {
         "yamlls",
         "pyright",
         "jdtls",
+        "omnisharp",
       },
       automatic_installation = true,
     })
