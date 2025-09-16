@@ -5,6 +5,7 @@
 
 config/vifm/vifminfo.json
 config/fish/conf.d/zz-local.fish
-
+config/omz/zz_local.zsh
 lazy-lock.json
 config/vale/styles
+config/tmux/plugins
