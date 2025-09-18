@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
+  lazy = false,
   build = ":TSUpdate",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -17,7 +18,7 @@ return {
     end
   end,
   config = function()
-    local treesitter = require("nvim-treesitter.configs")
+    local treesitter = require("nvim-treesitter")
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
@@ -33,7 +34,7 @@ return {
       autotag = {
         enable = true,
       },
-      ensure_installed = {
+      install = {
         "bash",
         "c",
         "css",
