@@ -61,6 +61,7 @@ return {
         "vale",
         "yamllint",
         "markdown-oxide",
+        "tflint",
       },
     })
   end,
