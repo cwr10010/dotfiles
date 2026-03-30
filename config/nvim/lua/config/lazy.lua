@@ -24,7 +24,7 @@ require("lazy").setup({
     lazy = false,
     version = false, -- always use the latest git commit
   },
-  install = { colorscheme = { "catppuccin" } },
+  install = { colorscheme = { "catppuccin-nvim" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {

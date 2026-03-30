@@ -1,3 +1,4 @@
+-- python format file on saving (deckared in conform.lua)
 return {
   -- https://github.com/psf/black
   "psf/black",

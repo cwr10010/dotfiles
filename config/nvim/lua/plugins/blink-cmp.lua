@@ -1,3 +1,4 @@
+-- auto completion library
 return {
   {
     "saghen/blink.compat",
