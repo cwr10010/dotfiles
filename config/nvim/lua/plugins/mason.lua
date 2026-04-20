@@ -62,6 +62,7 @@ return {
         "yamllint",
         "markdown-oxide",
         "tflint",
+        "tree-sitter-cli",
       },
     })
   end,
